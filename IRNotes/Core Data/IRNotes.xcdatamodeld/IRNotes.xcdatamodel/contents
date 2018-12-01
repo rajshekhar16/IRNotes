@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="irnote" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IRNote" inverseName="category" inverseEntity="IRNote" syncable="YES"/>
+    </entity>
+    <entity name="IRNote" representedClassName="IRNote" syncable="YES" codeGenerationType="class">
+        <attribute name="contents" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="irnote" inverseEntity="Category" syncable="YES"/>
+        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="irnote" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="irnote" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IRNote" inverseName="tag" inverseEntity="IRNote" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="IRNote" positionX="-58.3828125" positionY="-396.06640625" width="128" height="148"/>
+        <element name="Category" positionX="-54" positionY="27" width="128" height="75"/>
+        <element name="Tag" positionX="266.0546875" positionY="-165.7109375" width="128" height="75"/>
+    </elements>
 </model>
