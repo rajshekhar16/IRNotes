@@ -7,7 +7,7 @@
 //
 
 import CoreData
-
+import UIKit
 final class IRCoreDataManager: NSObject {
     
     private let modelName: String
@@ -15,6 +15,8 @@ final class IRCoreDataManager: NSObject {
     init(modelName: String)
     {
         self.modelName = modelName
+        super.init()
+        setupNotificationHandling()
     }
     
     
@@ -76,5 +78,34 @@ final class IRCoreDataManager: NSObject {
         
         
     }()
+    
+    
+    private func setupNotificationHandling() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self,
+                                       selector: #selector(saveChanges(_:)),
+                                       name: UIApplication.willTerminateNotification,
+                                       object: nil)
+        
+        notificationCenter.addObserver(self,
+                                       selector: #selector(saveChanges(_:)),
+                                       name: UIApplication.didEnterBackgroundNotification,
+                                       object: nil)
+    }
+    
+    @objc func saveChanges(_ notification: Notification) {
+        saveChanges()
+    }
+    
+    private func saveChanges() {
+        guard managedObjectContext.hasChanges else { return }
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Unable to Save Managed Object Context")
+            print("\(error), \(error.localizedDescription)")
+        }
+    }
     
 }

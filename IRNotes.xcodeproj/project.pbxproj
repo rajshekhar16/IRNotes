@@ -16,6 +16,8 @@
 		1A9FCB2721B27F1600A124B6 /* IRNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB2621B27F1600A124B6 /* IRNotesUITests.swift */; };
 		1A9FCB3D21B2803C00A124B6 /* IRCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB3C21B2803C00A124B6 /* IRCoreDataManager.swift */; };
 		1A9FCB4021B2805600A124B6 /* IRNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB3E21B2805600A124B6 /* IRNotes.xcdatamodeld */; };
+		1A9FCB4221B3172500A124B6 /* AddIRNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4121B3172500A124B6 /* AddIRNotesViewController.swift */; };
+		1A9FCB4521B31F0000A124B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4421B31F0000A124B6 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1A9FCB2821B27F1600A124B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A9FCB3C21B2803C00A124B6 /* IRCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCoreDataManager.swift; sourceTree = "<group>"; };
 		1A9FCB3F21B2805600A124B6 /* IRNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IRNotes.xcdatamodel; sourceTree = "<group>"; };
+		1A9FCB4121B3172500A124B6 /* AddIRNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIRNotesViewController.swift; sourceTree = "<group>"; };
+		1A9FCB4421B31F0000A124B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		1A9FCB0521B27F1600A124B6 /* IRNotes */ = {
 			isa = PBXGroup;
 			children = (
+				1A9FCB4321B31ED200A124B6 /* Extensions */,
 				1A9FCB3B21B2802200A124B6 /* Core Data */,
 				1A9FCB3A21B2800D00A124B6 /* Managers */,
 				1A9FCB3621B27F2E00A124B6 /* App Delegates */,
@@ -142,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				1A9FCB0821B27F1600A124B6 /* ViewController.swift */,
+				1A9FCB4121B3172500A124B6 /* AddIRNotesViewController.swift */,
 			);
 			path = "Root View Controller";
 			sourceTree = "<group>";
@@ -193,6 +199,14 @@
 				1A9FCB3E21B2805600A124B6 /* IRNotes.xcdatamodeld */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		1A9FCB4321B31ED200A124B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCB4421B31F0000A124B6 /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,7 +343,9 @@
 				1A9FCB4021B2805600A124B6 /* IRNotes.xcdatamodeld in Sources */,
 				1A9FCB0921B27F1600A124B6 /* ViewController.swift in Sources */,
 				1A9FCB3D21B2803C00A124B6 /* IRCoreDataManager.swift in Sources */,
+				1A9FCB4221B3172500A124B6 /* AddIRNotesViewController.swift in Sources */,
 				1A9FCB0721B27F1600A124B6 /* AppDelegate.swift in Sources */,
+				1A9FCB4521B31F0000A124B6 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
