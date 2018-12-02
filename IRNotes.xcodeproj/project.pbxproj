@@ -18,6 +18,8 @@
 		1A9FCB4021B2805600A124B6 /* IRNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB3E21B2805600A124B6 /* IRNotes.xcdatamodeld */; };
 		1A9FCB4221B3172500A124B6 /* AddIRNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4121B3172500A124B6 /* AddIRNotesViewController.swift */; };
 		1A9FCB4521B31F0000A124B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4421B31F0000A124B6 /* UIViewController.swift */; };
+		1A9FCB4821B3C6FE00A124B6 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4721B3C6FE00A124B6 /* NotesTableViewCell.swift */; };
+		1A9FCB4A21B423EE00A124B6 /* IRNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4921B423EE00A124B6 /* IRNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		1A9FCB3F21B2805600A124B6 /* IRNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IRNotes.xcdatamodel; sourceTree = "<group>"; };
 		1A9FCB4121B3172500A124B6 /* AddIRNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIRNotesViewController.swift; sourceTree = "<group>"; };
 		1A9FCB4421B31F0000A124B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		1A9FCB4721B3C6FE00A124B6 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
+		1A9FCB4921B423EE00A124B6 /* IRNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		1A9FCB0521B27F1600A124B6 /* IRNotes */ = {
 			isa = PBXGroup;
 			children = (
+				1A9FCB4621B3C6D700A124B6 /* TableViewCells */,
 				1A9FCB4321B31ED200A124B6 /* Extensions */,
 				1A9FCB3B21B2802200A124B6 /* Core Data */,
 				1A9FCB3A21B2800D00A124B6 /* Managers */,
@@ -196,6 +201,7 @@
 		1A9FCB3B21B2802200A124B6 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				1A9FCB4B21B4240600A124B6 /* Extensions */,
 				1A9FCB3E21B2805600A124B6 /* IRNotes.xcdatamodeld */,
 			);
 			path = "Core Data";
@@ -205,6 +211,22 @@
 			isa = PBXGroup;
 			children = (
 				1A9FCB4421B31F0000A124B6 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1A9FCB4621B3C6D700A124B6 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCB4721B3C6FE00A124B6 /* NotesTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		1A9FCB4B21B4240600A124B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A9FCB4921B423EE00A124B6 /* IRNote.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,11 +362,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9FCB4A21B423EE00A124B6 /* IRNote.swift in Sources */,
 				1A9FCB4021B2805600A124B6 /* IRNotes.xcdatamodeld in Sources */,
 				1A9FCB0921B27F1600A124B6 /* ViewController.swift in Sources */,
 				1A9FCB3D21B2803C00A124B6 /* IRCoreDataManager.swift in Sources */,
 				1A9FCB4221B3172500A124B6 /* AddIRNotesViewController.swift in Sources */,
 				1A9FCB0721B27F1600A124B6 /* AppDelegate.swift in Sources */,
+				1A9FCB4821B3C6FE00A124B6 /* NotesTableViewCell.swift in Sources */,
 				1A9FCB4521B31F0000A124B6 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
