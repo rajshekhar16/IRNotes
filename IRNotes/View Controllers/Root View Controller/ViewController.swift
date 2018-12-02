@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private enum Segue {
         
         static let AddNote = "AddNote"
+        static let EditNote = "EditNote"
     }
     
     var notes : [IRNote]?
@@ -34,7 +35,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var notesView: UIView!
     @IBOutlet weak var msgLabel: UILabel!
     @IBOutlet weak var noteTableView: UITableView!
-   
+    
+    var hasNoteChanged = false
     
     private var irCoreDataMgr = IRCoreDataManager(modelName: "IRNotes")
     
@@ -46,6 +48,8 @@ class ViewController: UIViewController {
         setupView()
         
         fetchRequest()
+        
+        setupNotification()
     }
     
     private lazy var updatedAtDateFormatter: DateFormatter = {
@@ -104,6 +108,66 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    private func setupNotification() {
+        
+        let notificationCenter = NotificationCenter.default
+        
+        notificationCenter.addObserver(self, selector: #selector(managedObjectContextObjectsDidChange(_:)), name: Notification.Name.NSManagedObjectContextObjectsDidChange, object: irCoreDataMgr.managedObjectContext)
+        
+    }
+    
+    // MARK: - Notification Handling
+    
+    @objc private func managedObjectContextObjectsDidChange(_ notification: Notification) {
+       
+        guard let userInfo = notification.userInfo else { return }
+        
+        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>
+        {
+            for insert in inserts{
+                if let note = insert as? IRNote {
+                notes?.append(note)
+                hasNoteChanged = true
+                }
+            }
+        }
+        
+        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>{
+            for update in updates {
+                if let _ = update as? IRNote {
+                    hasNoteChanged = true
+                }
+                
+            }
+        }
+        
+        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject> {
+            
+            for delete in deletes {
+                if let note = delete as? IRNote
+                {
+                    if let index = notes?.index(of: note){
+                        notes?.remove(at: index)
+                        hasNoteChanged = true
+                    }
+                }
+            }
+        }
+        
+        if hasNoteChanged{
+            
+            notes?.sort(by: { $0.updatedAtAsDate > $1.updatedAtAsDate })
+            
+            noteTableView.reloadData()
+            
+            updateView()
+            
+        }
+        
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let identifier = segue.identifier else { return }
@@ -115,6 +179,18 @@ class ViewController: UIViewController {
             }
             
             destination.managedContextObject = irCoreDataMgr.managedObjectContext
+            
+        case Segue.EditNote:
+            
+            guard let destination = segue.destination as? EditViewController else{
+                return
+            }
+            
+            guard let indexPath = noteTableView.indexPathForSelectedRow,let note = notes?[indexPath.row] else { return }
+            
+            destination.note = note
+            
+            
             
         default:
             break
@@ -156,6 +232,13 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard editingStyle == .delete else { return }
+        
+        guard let note = notes?[indexPath.row] else { fatalError("Unexpected Index Path") }
+        
+        irCoreDataMgr.managedObjectContext.delete(note)
+
         
     }
     

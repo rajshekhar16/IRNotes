@@ -20,6 +20,7 @@ class AddIRNotesViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Add Note"
+    
         // Do any additional setup after loading the view.
     }
     

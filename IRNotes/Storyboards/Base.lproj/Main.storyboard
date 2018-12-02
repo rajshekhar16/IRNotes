@@ -42,20 +42,20 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE7-2e-Auj">
-                                                            <rect key="frame" x="8" y="8" width="294.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <rect key="frame" x="12" y="8" width="296.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHN-GG-HtX">
-                                                            <rect key="frame" x="310.5" y="3.5" width="41.5" height="29.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                            <rect key="frame" x="316.5" y="0.5" width="31.5" height="35"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtX-f2-Z5l">
-                                                            <rect key="frame" x="8" y="41" width="359" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                            <rect key="frame" x="12" y="43.5" width="351" height="18"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -63,19 +63,20 @@
                                                     <constraints>
                                                         <constraint firstItem="WE7-2e-Auj" firstAttribute="centerY" secondItem="wHN-GG-HtX" secondAttribute="centerY" id="2DI-ub-kT8"/>
                                                         <constraint firstItem="OtX-f2-Z5l" firstAttribute="top" secondItem="wHN-GG-HtX" secondAttribute="bottom" constant="8" id="9B9-p6-FzZ"/>
-                                                        <constraint firstItem="OtX-f2-Z5l" firstAttribute="leading" secondItem="2va-68-bdV" secondAttribute="leading" constant="8" id="IIZ-We-YY9"/>
+                                                        <constraint firstItem="OtX-f2-Z5l" firstAttribute="leading" secondItem="2va-68-bdV" secondAttribute="leading" constant="12" id="IIZ-We-YY9"/>
                                                         <constraint firstItem="wHN-GG-HtX" firstAttribute="leading" secondItem="WE7-2e-Auj" secondAttribute="trailing" constant="8" id="P6L-h4-53r"/>
                                                         <constraint firstItem="WE7-2e-Auj" firstAttribute="top" secondItem="2va-68-bdV" secondAttribute="top" constant="8" id="Utt-fZ-UW6"/>
-                                                        <constraint firstAttribute="trailing" secondItem="OtX-f2-Z5l" secondAttribute="trailing" constant="8" id="XlX-n8-moZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OtX-f2-Z5l" secondAttribute="trailing" constant="12" id="XlX-n8-moZ"/>
                                                         <constraint firstAttribute="bottom" secondItem="OtX-f2-Z5l" secondAttribute="bottom" constant="8" id="cEM-V3-fvt"/>
-                                                        <constraint firstItem="WE7-2e-Auj" firstAttribute="leading" secondItem="2va-68-bdV" secondAttribute="leading" constant="8" id="dR8-lP-Kr5"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="wHN-GG-HtX" secondAttribute="trailing" constant="8" id="rWH-FR-5CG"/>
+                                                        <constraint firstItem="WE7-2e-Auj" firstAttribute="leading" secondItem="2va-68-bdV" secondAttribute="leading" constant="12" id="dR8-lP-Kr5"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="wHN-GG-HtX" secondAttribute="trailing" constant="12" id="rWH-FR-5CG"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="contentsLabel" destination="OtX-f2-Z5l" id="Gh6-gV-qCn"/>
                                                     <outlet property="dateLabel" destination="wHN-GG-HtX" id="Wx6-3x-jEg"/>
                                                     <outlet property="titleLabel" destination="WE7-2e-Auj" id="1pi-dg-BaL"/>
+                                                    <segue destination="AIR-76-b4M" kind="show" identifier="EditNote" id="AVt-Xy-wRc"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -142,7 +143,7 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mV2-Ec-wbI">
                                 <rect key="frame" x="16" y="135" width="343" height="468"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.9521265310944671" green="0.9521265310944671" blue="0.9521265310944671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -175,6 +176,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3V-zp-JmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="120.98950524737631"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="xf4-SL-GyD">
+            <objects>
+                <viewController id="AIR-76-b4M" customClass="EditViewController" customModule="IRNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j3A-BZ-tq8"/>
+                        <viewControllerLayoutGuide type="bottom" id="L0g-lg-fAA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t7l-fR-hhw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVR-7N-Pzb">
+                                <rect key="frame" x="16" y="80" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fvM-MK-Lu9">
+                                <rect key="frame" x="16" y="133" width="343" height="473"/>
+                                <color key="backgroundColor" red="0.95212653110000001" green="0.95212653110000001" blue="0.95212653110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="L0g-lg-fAA" firstAttribute="top" secondItem="fvM-MK-Lu9" secondAttribute="bottom" constant="61" id="6Gn-5y-0by"/>
+                            <constraint firstAttribute="trailing" secondItem="EVR-7N-Pzb" secondAttribute="trailing" constant="16" id="ECe-r8-jst"/>
+                            <constraint firstItem="fvM-MK-Lu9" firstAttribute="top" secondItem="EVR-7N-Pzb" secondAttribute="bottom" constant="23" id="HVG-cO-AUH"/>
+                            <constraint firstItem="EVR-7N-Pzb" firstAttribute="top" secondItem="j3A-BZ-tq8" secondAttribute="bottom" constant="16" id="Ocd-IB-cwe"/>
+                            <constraint firstAttribute="trailing" secondItem="fvM-MK-Lu9" secondAttribute="trailing" constant="16" id="mHc-UM-evr"/>
+                            <constraint firstItem="EVR-7N-Pzb" firstAttribute="leading" secondItem="t7l-fR-hhw" secondAttribute="leading" constant="16" id="rmP-vW-fXr"/>
+                            <constraint firstItem="fvM-MK-Lu9" firstAttribute="leading" secondItem="t7l-fR-hhw" secondAttribute="leading" constant="16" id="sU8-o6-yxZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="editContentsTextView" destination="fvM-MK-Lu9" id="LzI-tP-3fN"/>
+                        <outlet property="editTitleTextField" destination="EVR-7N-Pzb" id="7KB-ZZ-qXf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDH-4V-IHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nQa-ub-DsL">

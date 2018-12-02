@@ -20,6 +20,7 @@
 		1A9FCB4521B31F0000A124B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4421B31F0000A124B6 /* UIViewController.swift */; };
 		1A9FCB4821B3C6FE00A124B6 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4721B3C6FE00A124B6 /* NotesTableViewCell.swift */; };
 		1A9FCB4A21B423EE00A124B6 /* IRNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4921B423EE00A124B6 /* IRNote.swift */; };
+		1A9FCB4E21B42AA300A124B6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCB4C21B4298400A124B6 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1A9FCB4421B31F0000A124B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		1A9FCB4721B3C6FE00A124B6 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		1A9FCB4921B423EE00A124B6 /* IRNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRNote.swift; sourceTree = "<group>"; };
+		1A9FCB4C21B4298400A124B6 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				1A9FCB0821B27F1600A124B6 /* ViewController.swift */,
 				1A9FCB4121B3172500A124B6 /* AddIRNotesViewController.swift */,
+				1A9FCB4C21B4298400A124B6 /* EditViewController.swift */,
 			);
 			path = "Root View Controller";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9FCB4E21B42AA300A124B6 /* EditViewController.swift in Sources */,
 				1A9FCB4A21B423EE00A124B6 /* IRNote.swift in Sources */,
 				1A9FCB4021B2805600A124B6 /* IRNotes.xcdatamodeld in Sources */,
 				1A9FCB0921B27F1600A124B6 /* ViewController.swift in Sources */,
